@@ -11,19 +11,19 @@ import (
 
 func BenchmarkHelloWorldTable(b *testing.B) {
 	benchmarks := []struct {
-		name string
+		name    string
 		request string
-	} {
+	}{
 		{
-			name: "HelloWorld(Nata)",
+			name:    "HelloWorld(Nata)",
 			request: "Nata",
 		},
 		{
-			name: "HelloWorld(Nael)",
+			name:    "HelloWorld(Nael)",
 			request: "Nael",
 		},
 		{
-			name: "HelloWorld(Evelyn)",
+			name:    "HelloWorld(Evelyn)",
 			request: "Evelyn",
 		},
 	}
@@ -52,18 +52,18 @@ func BenchmarkHelloWorld(b *testing.B) {
 
 func TestHelloWorldTable(t *testing.T) {
 	tests := []struct {
-		name string
-		request string
+		name     string
+		request  string
 		expected string
 	}{
 		{
-			name: "HelloWorld(Nata)",
-			request: "Nata",
+			name:     "HelloWorld(Nata)",
+			request:  "Nata",
 			expected: "Hello Nata",
 		},
 		{
-			name: "HelloWorld(Nael)",
-			request: "Nael",
+			name:     "HelloWorld(Nael)",
+			request:  "Nael",
 			expected: "Hello Nael",
 		},
 	}

@@ -22,21 +22,16 @@ func TestCategoryService_GetNotFound(t *testing.T) {
 }
 
 func TestCategoryService_GetFound(t *testing.T) {
-	// Initialize the mock repository
 	repo := &mocks.CategoryRepository{}
 	categoryService := CategoryService{Repository: repo}
 
-	// Create a mock category
 	mockCategory := entity.Category{Id: "1", Name: "Abc"}
 
-	// Set up the mock expectation with the correct return types
-	repo.On("FindById", "1").Return(&mockCategory)  // Use "1" for the argument, and return a pointer
+	repo.On("FindById", "1").Return(&mockCategory)
 
-	// Call the method under test
 	res, err := categoryService.Get("1")
 
-	// Assert that there is no error and that the result is not nil
 	assert.Nil(t, err)
 	assert.NotNil(t, res)
-	assert.Equal(t, &mockCategory, res) // Optionally check if the returned category is the same as the mock
+	assert.Equal(t, &mockCategory, res)
 }

@@ -9,6 +9,12 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
+func BenchmarkHelloWorld(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		HelloWorld("Nael")
+	}
+}
+
 func TestHelloWorldTable(t *testing.T) {
 	tests := []struct {
 		name string
@@ -36,7 +42,7 @@ func TestHelloWorldTable(t *testing.T) {
 }
 
 func TestMain(m *testing.M) {
-	fmt.Println("befor unit test")
+	fmt.Println("before unit test")
 
 	m.Run()
 
